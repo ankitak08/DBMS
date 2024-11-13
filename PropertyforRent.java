@@ -42,6 +42,33 @@ SELECT fname, lname
 FROM PrivateOwner
 WHERE fname LIKE '__C%';
 
+7. List All Properties Managed by Staff Member with ID S123
+SELECT * 
+FROM PropertyForRent
+WHERE staffNo = 'S123';
+
+8. Find the Average Rent of Properties in Pune
+SELECT AVG(rent) AS average_rent
+FROM PropertyForRent
+WHERE city = 'Pune';
+
+9. Find the Number of Properties Managed by Each Branch
+SELECT branchNo, COUNT(*) AS property_count
+FROM PropertyForRent
+GROUP BY branchNo;
+This script covers the setup of tables, insertion of data, and all the specified queries. Let me know if you need further modifications!
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,3 +113,14 @@ Find the Number of Properties Which Are of Type 'Flat'
 SELECT COUNT(*) AS FlatCount
 FROM PropertyForRent
 WHERE type = 'Flat';
+
+
+8. List Staff Members Born Before 2004
+SELECT fname, lname, DOB
+FROM Staff
+WHERE DOB < '2004-01-01';
+
+9. Find the Total Number of Staff Members in Each Branch
+SELECT branchNo, COUNT(*) AS staff_count
+FROM Staff
+GROUP BY branchNo;
